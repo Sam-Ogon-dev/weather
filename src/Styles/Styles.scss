@@ -1,0 +1,88 @@
+#root {
+  background: url("../assets/bg.jpg");
+  background-size: cover;
+}
+
+.App {
+  backdrop-filter: blur(5px);
+}
+
+.weather {
+  span {
+    font-size: 25px;
+  }
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.date {
+  font-size: 23px;
+}
+
+.forecast {
+  background-color: rgba(50, 50, 50, 0.95);
+  @include media-breakpoint-down(xs) {
+    & {
+      display: grid!important;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 5px;
+      background-color: transparent;
+    }
+  }
+}
+
+.day {
+  color: rgba(255, 255, 255, 0.78);
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    transition: 0.3s;
+    background-color: rgba(224, 224, 224, 0.92);
+    color: rgb(23, 23, 23);
+  }
+  @include media-breakpoint-down(xs) {
+    background-color: rgba(50, 50, 50, 0.95);
+    border-radius: 3px;
+  }
+}
+
+.day_in_detail {
+  background-color: rgba(50, 50, 50, 0.95);
+  color: rgba(255, 255, 255, 0.89);
+  font-size: 25px;
+
+  .icon {
+    margin: 10px;
+  }
+
+  @media (max-height: 576px){
+    font-size: 20px!important;
+  }
+}
+
+.loader {
+  animation: loaderAnim 1s infinite;
+}
+
+h1 {
+  @include media-breakpoint-down(xs) {
+    text-align: center;
+    font-size: 39px;
+  }
+}
+
+@keyframes loaderAnim {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(180deg);
+  }
+}
